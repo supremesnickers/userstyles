@@ -1,0 +1,138 @@
+/* ==UserStyle==
+@name           Lobste.rs Warm Dark Theme
+@namespace      github.com/supremesnickers
+@version        1.0.0
+@description    A heart-warming dark theme for lobste.rs
+@author         supremesnickers
+@preprocessor   less
+==/UserStyle== */
+@-moz-document domain("lobste.rs") {
+	@bg-primary: #292524;
+	@bg-secondary: #44403C;
+	@bg-tertiary: #403b3b;
+	@text-primary: #F4F4F5;
+	@text-secondary: #D6D3D1;
+	@text-tertiary: #A8A29E;
+	@text-placeholder: #57534E;
+	@text-disabled: #686664;
+	@text-white: #fff;
+	@border-danger: #EF4444;
+
+	body {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	}
+
+	@media(prefers-color-scheme:dark) {
+		@media(max-width: 480px) {
+			div#header, div#leader {
+				color: @text-tertiary;
+				padding: 16px 5px;
+				background-color: @bg-primary;
+				border-bottom: 1px solid @text-placeholder;
+			}
+			ol.stories.list li.story {
+				border-bottom: 0px solid @text-placeholder;
+				div.story_liner {
+					background-color: @bg-primary;
+				}
+				.mobile_comments {
+					background-color: @bg-secondary;
+				}
+			}
+		}
+		body {
+			background-color: @bg-primary;
+			color: @text-primary;
+		}
+		#headerleft {
+			.headerlinks .cur_url {
+				color: @text-primary;
+			}
+		}
+
+		#header {
+			a {
+				color: @text-tertiary;
+				&:hover {
+					color: @text-white;
+				}
+			}
+		}
+		#inside {
+			p {
+				color: @text-secondary;
+			}
+			.stories .story {
+				.link {
+					a {
+						color: @text-secondary;
+						&:visited {
+							color: @text-disabled !important;
+						}
+						&:hover {
+							text-decoration: underline;
+							text-decoration-line: underline;
+							text-decoration-thickness: 2px;
+							text-decoration-style: initial;
+							text-decoration-color: initial;
+						}
+					}
+				}
+			}
+			a {
+				color: @text-secondary;
+			}
+			.help {
+				color: @text-tertiary;
+			}
+		}
+		table {
+			&.data {
+				th {
+					background-color: @bg-primary;
+					border-bottom: 1px solid @text-placeholder;
+					border-top: 1px solid @text-placeholder;
+				}
+				&.zebra {
+					border-color: @text-placeholder;
+					td {
+						border-bottom: 1px solid @text-placeholder !important;
+					}
+					tr:nth-child(even) td {
+						background-color: @bg-tertiary;
+					}
+					tr:nth-child(odd) td {
+						background-color: @bg-secondary;
+					}
+				}
+			}
+			span.hat {
+				span.crown,
+				a {
+					color: @bg-primary !important;
+				}
+			}
+		}
+		a.tag {
+			color: @bg-primary !important;
+		}
+		.upvoter:hover {
+			border-bottom-color: @border-danger !important;
+		}
+		li {
+			.comment_parent_tree_line,
+			.comment_siblings_tree_line {
+				border-left: 1px dotted @text-placeholder;
+			}
+		}
+		textarea {
+			&::placeholder {
+				color: @text-tertiary;
+			}
+			background-color: @bg-secondary !important;
+			border: 1px solid @text-placeholder;
+		}
+	}
+}
