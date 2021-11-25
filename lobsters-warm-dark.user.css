@@ -115,7 +115,7 @@
 				}
 			}
 		}
-		a.tag {
+		a.tags {
 			color: @bg-primary !important;
 		}
 		.upvoter:hover {
